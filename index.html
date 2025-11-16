@@ -193,4 +193,692 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      align-i
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--ora-blue);
+      color: var(--ora-white);
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(35, 138, 203, 0.3);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #1a7ab7;
+      box-shadow: 0 18px 36px rgba(35, 138, 203, 0.4);
+    }
+
+    .btn-outline {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: var(--ora-white);
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.16s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ora-blue);
+      color: var(--ora-blue);
+      background: rgba(35,138,203,0.04);
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .hero-image {
+      min-height: 260px;
+      background-image: linear-gradient(120deg, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.10)), url("front.jpg");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(15,23,42,0.84);
+      color: var(--ora-white);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-image-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 5px rgba(74, 222, 128, 0.35);
+    }
+
+    /* Main layout */
+
+    .main {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+      gap: 24px;
+      padding: 24px 24px 28px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: #f9fafb;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+    }
+
+    .card h2 {
+      font-family: "Garamond", "Times New Roman", serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+    }
+
+    .section-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    .detail-pill {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: var(--ora-white);
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+
+    .detail-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .detail-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .features-list {
+      columns: 2;
+      column-gap: 24px;
+      font-size: 0.9rem;
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    .features-list li {
+      break-inside: avoid;
+      margin-bottom: 4px;
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .features-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--ora-blue);
+    }
+
+    .text-body {
+      font-size: 0.93rem;
+      color: #111827;
+    }
+
+    .text-body + .text-body {
+      margin-top: 10px;
+    }
+
+    /* Gallery */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .gallery-grid img.large {
+      grid-column: span 3;
+      height: 220px;
+    }
+
+    .floorplan-img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: var(--ora-white);
+      display: block;
+    }
+
+    /* Agent card */
+
+    .agent-card {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .agent-photo {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--ora-blue);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.3);
+    }
+
+    .agent-name {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+
+    .agent-title {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .agent-brokerage {
+      font-size: 0.86rem;
+      margin-top: 2px;
+    }
+
+    .agent-contact {
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .agent-contact div {
+      margin-bottom: 2px;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .badge-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(35,138,203,0.08);
+      color: var(--ora-blue);
+      font-size: 0.78rem;
+      margin-top: 6px;
+    }
+
+    /* Info grid on sidebar */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+      font-size: 0.84rem;
+    }
+
+    .info-pill {
+      background: var(--ora-white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 6px 8px;
+    }
+
+    .info-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* Map placeholder – you can replace src with an actual embed */
+
+    .map-placeholder {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,0.7);
+      overflow: hidden;
+      background: #dbeafe;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e293b;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 12px;
+    }
+
+    /* Footer */
+
+    .footer {
+      padding: 0 24px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .footer strong {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-text {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .gallery-grid img.large {
+        grid-column: span 2;
+        height: 200px;
+      }
+      .details-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .features-list {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin-top: 18px;
+      }
+      .shell {
+        border-radius: 22px;
+      }
+      .hero-text {
+        padding: 20px 18px 16px;
+      }
+      .main {
+        padding: 18px;
+      }
+      .card {
+        padding: 14px 14px 12px;
+      }
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top-bar">
+      <div class="brand">
+        <!-- Replace logo-horizontal.png with your actual logo filename -->
+        <img src="logo-horizontal.png" alt="Oklahoma Realty &amp; Auction logo" class="brand-logo" />
+        <div>
+          <div class="brand-text-main">Oklahoma Realty &amp; Auction</div>
+          <div class="brand-tagline">Trusted Support Through Every Season of Life</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#photos">Photos</a>
+        <a href="#details">Details</a>
+        <a href="#floorplan">Floorplan</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-text">
+          <div class="eyebrow">For Sale</div>
+          <h1 class="hero-title">4001 Creekwood</h1>
+          <div class="hero-subtitle">Edmond, Oklahoma 73025 &bull; Ramblewood Hills &bull; Deer Creek Schools</div>
+
+          <div class="hero-price">$275,000</div>
+          <div class="hero-meta">
+            <span>3 Beds</span>
+            <span>&bull;</span>
+            <span>2 Baths</span>
+            <span>&bull;</span>
+            <span>1,568 Sq Ft (mol)</span>
+            <span>&bull;</span>
+            <span>1.14 Acres (mol)</span>
+            <span>&bull;</span>
+            <span>MLS# 1201531</span>
+          </div>
+
+          <div class="hero-chip">
+            <span>🌳</span>
+            <span>Wooded corner lot with wildlife &amp; privacy</span>
+          </div>
+
+          <ul class="hero-bullets">
+            <li>One-owner home on 1.14 acres with mature trees.</li>
+            <li>Deer Creek School District &amp; easy access to Coffee Creek &amp; N Santa Fe.</li>
+            <li>Generac whole-home generator, Rain Bird sprinkler system &amp; security system (per seller).</li>
+          </ul>
+
+          <div class="hero-cta-row">
+            <!-- Replace tel/email href values with your actual info -->
+            <a href="tel:YOUR-PHONE-HERE" class="btn-primary">
+              <span>📞 Schedule a Showing</span>
+            </a>
+            <a href="mailto:YOUR-EMAIL-HERE?subject=4001%20Creekwood%20Showing%20Request" class="btn-outline">
+              ✉️ Email Angela
+            </a>
+          </div>
+
+          <div class="hero-note">
+            From Coffee Creek &amp; N Santa Fe: head west on Coffee Creek, then first right onto Creekwood.
+            Home is the corner lot on your left.
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <!-- Replace front.jpg with your favorite exterior shot -->
+          <div class="hero-image-badge">
+            <span class="hero-image-badge-dot"></span>
+            <span>Now Available in Ramblewood Hills</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="main">
+        <!-- LEFT COLUMN -->
+        <div class="column">
+
+          <!-- Property Details -->
+          <section class="card" id="details">
+            <h2>Property Details</h2>
+            <p class="section-subtitle">
+              A well-maintained one-owner home tucked among the trees with room to breathe and grow.
+            </p>
+
+            <div class="details-grid">
+              <div class="detail-pill">
+                <div class="detail-label">Price</div>
+                <div class="detail-value">$275,000</div>
+              </div>
+              <div class="detail-pill">
+                <div class="detail-label">Beds</div>
+                <div class="detail-value">3</div>
+              </div>
+              <div class="detail-pill">
+                <div class="detail-label">Baths</div>
+                <div class="detail-value">2</div>
+              </div>
+              <div class="detail-pill">
+                <div class="detail-label">Living Area</div>
+                <div class="detail-value">1,568 sq ft (mol)</div>
+              </div>
+              <div class="detail-pill">
+                <div class="detail-label">Lot Size</div>
+                <div class="detail-value">1.14 acres (mol)</div>
+              </div>
+              <div class="detail-pill">
+                <div class="detail-label">Garage</div>
+                <div class="detail-value">2-car attached</div>
+              </div>
+            </div>
+
+            <ul class="features-list">
+              <li>One-owner home, lovingly maintained.</li>
+              <li>Brick exterior with charming front porch &amp; railing.</li>
+              <li>Spacious living room with brick fireplace &amp; wood-burning insert.</li>
+              <li>Built-in shelving and cabinetry in the living area.</li>
+              <li>Light-filled kitchen with abundant solid-wood cabinetry &amp; pull-outs.</li>
+              <li>Electric cooktop, stainless refrigerator &amp; great counter space.</li>
+              <li>Dining area overlooking the trees and back patio.</li>
+              <li>Generac whole-home generator (per seller).</li>
+              <li>Rain Bird sprinkler system (per seller).</li>
+              <li>Home security system (per seller).</li>
+              <li>Primary suite with updated tiled shower &amp; granite vanity.</li>
+              <li>Two additional bedrooms with large windows &amp; generous closets.</li>
+              <li>Hall bath with tub/shower combo and long vanity.</li>
+              <li>Dedicated laundry room with storage and utility sink potential.</li>
+              <li>Expansive paver patio and terraced landscaping – perfect for entertaining.</li>
+              <li>Mature trees, wildlife, and a tucked-away feel on a corner lot.</li>
+              <li>Backyard storage building for tools, hobbies, or seasonal décor.</li>
+              <li>Deer Creek School District.</li>
+            </ul>
+          </section>
+
+          <!-- About This Home -->
+          <section class="card">
+            <h2>About This Home</h2>
+            <p class="text-body">
+              Welcome to 4001 Creekwood – a one-owner home nestled on approximately 1.14 wooded acres in
+              the Ramblewood Hills addition of Edmond. From the moment you pull up, you’re greeted by a
+              classic brick exterior, inviting front porch, and big shade trees that make the property feel
+              peaceful and private.
+            </p>
+            <p class="text-body">
+              Inside, the living room is anchored by a brick fireplace with wood-burning insert and
+              beautiful built-in shelving, creating a cozy spot for fall and winter evenings. The kitchen
+              offers an impressive amount of storage with solid-wood cabinetry, pull-out features, and
+              plenty of counter space, along with a dining area that enjoys views of the backyard and trees.
+            </p>
+            <p class="text-body">
+              The primary suite is tucked toward the front of the home and features an updated bath with
+              granite vanity, tiled shower, and extra storage. Two additional bedrooms and a hall bath give
+              you flexible space for guests, kids, or a home office. A dedicated laundry room, two-car
+              garage, and thoughtful built-ins throughout keep everyday life running smoothly.
+            </p>
+            <p class="text-body">
+              Out back, multiple outdoor living spaces make the most of the acreage. A large paver patio,
+              terraced landscaping, mature trees, and visiting deer create a private, park-like setting.
+              Add in the Generac whole-home generator, Rain Bird sprinkler system, and security system
+              (per seller), and you’ve got a property that’s as practical as it is peaceful.
+            </p>
+          </section>
+
+          <!-- Photo Gallery -->
+          <section class="card" id="photos">
+            <h2>Photo Gallery</h2>
+            <p class="section-subtitle">Scroll through a few favorite spaces from inside and out.</p>
+            <div class="gallery-grid">
+              <!-- Replace filenames with your actual image filenames as desired -->
+              <img src="living-room.jpg" alt="Living room with brick fireplace and beams" class="large" />
+              <img src="fireplace.jpg" alt="Brick fireplace with built-ins" />
+              <img src="kitchen-1.jpg" alt="Kitchen view" />
+              <img src="kitchen-2.jpg" alt="Kitchen cabinetry and storage" />
+              <img src="primary-bed.jpg" alt="Primary bedroom" />
+              <img src="bedroom-2.jpg" alt="Additional bedroom" />
+              <img src="bath-primary.jpg" alt="Primary bath with tiled shower and granite vanity" />
+              <img src="bath-hall.jpg" alt="Hall bath" />
+              <img src="patio-1.jpg" alt="Back patio and exterior" />
+              <img src="patio-2.jpg" alt="Terraced landscaping and steps" />
+              <img src="backyard.jpg" alt="Backyard and trees" />
+              <img src="generator.jpg" alt="Generac whole-home generator" />
+              <img src="shed.jpg" alt="Backyard storage building" />
+            </div>
+          </section>
+
+          <!-- Floorplan -->
+          <section class="card" id="floorplan">
+            <h2>Floorplan</h2>
+            <p class="section-subtitle">
+              Room sizes and layout are approximate and provided for marketing purposes only. Measurements to be independently verified.
+            </p>
+            <!-- Replace floorplan.jpg with your actual floorplan file name -->
+            <img src="floorplan.jpg" alt="Floorplan for 4001 Creekwood, Edmond, OK" class="floorplan-img" />
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN (Sidebar) -->
+        <div class="column">
+
+          <!-- Agent / Contact -->
+          <section class="card" id="contact">
+            <h2>Connect With Angela</h2>
+            <div class="agent-card">
+              <!-- Replace agent.jpg with your headshot file name -->
+              <img src="agent.jpg" alt="Angela Griffith" class="agent-photo" />
+              <div>
+                <div class="agent-name">Angela Griffith</div>
+                <div class="agent-title">REALTOR®</div>
+                <div class="agent-brokerage">Oklahoma Realty &amp; Auction</div>
+                <div class="badge-light">💙 Serving Edmond, Deer Creek &amp; the OKC Metro</div>
+              </div>
+            </div>
+
+            <div class="agent-contact">
+              <!-- Replace placeholders with your real info -->
+              <div><strong>Call/Text:</strong> <a href="tel:YOUR-PHONE-HERE">YOUR PHONE HERE</a></div>
+              <div><strong>Email:</strong> <a href="mailto:YOUR-EMAIL-HERE">YOUR EMAIL HERE</a></div>
+              <div><strong>Website:</strong> <a href="https://YOUR-WEBSITE-HERE" target="_blank" rel="noopener">YOUR WEBSITE HERE</a></div>
+            </div>
+
+            <p class="contact-note">
+              Have questions about 4001 Creekwood or curious what your current home could sell for?
+              Reach out anytime – I’m here to help you navigate every step with clarity and care.
+            </p>
+          </section>
+
+          <!-- Quick Facts -->
+          <section class="card">
+            <h2>Quick Facts</h2>
+            <div class="info-grid">
+              <div class="info-pill">
+                <div class="info-label">MLS Number</div>
+                <div class="info-value">1201531</div>
+              </div>
+              <div class="info-pill">
+                <div class="info-label">Status</div>
+                <div class="info-value">Active</div>
+              </div>
+              <div class="info-pill">
+                <div class="info-label">Subdivision</div>
+                <div class="info-value">Ramblewood Hills</div>
+              </div>
+              <div class="info-pill">
+                <div class="info-label">County</div>
+                <div class="info-value">Oklahoma</div>
+              </div>
+              <div class="info-pill">
+                <div class="info-label">Schools</div>
+                <div class="info-value">Deer Creek</div>
+              </div>
+              <div class="info-pill">
+                <div class="info-label">Year Built</div>
+                <div class="info-value">[Add Year]</div>
+              </div>
+            </div>
+            <p class="contact-note">
+              All information believed accurate but not guaranteed. Buyer to verify schools, taxes, and square footage.
+            </p>
+          </section>
+
+          <!-- Location / Map -->
+          <section class="card">
+            <h2>Location</h2>
+            <p class="section-subtitle">
+              Conveniently located near Coffee Creek &amp; N Santa Fe with a peaceful, tucked-away feel.
+            </p>
+
+            <div class="map-placeholder">
+              <!-- OPTIONAL: replace this div with a real Google Maps iframe embed for 4001 Creekwood, Edmond, OK 73025 -->
+              <div>
+                <strong>Map Preview</strong><br />
+                Replace this box with a Google Maps embed if you’d like,<br />
+                or keep it as a simple visual placeholder.
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <strong>Oklahoma Realty &amp; Auction</strong> &mdash; Trusted Support Through Every Season of Life
+        </div>
+        <div>
+          Information deemed reliable but not guaranteed. © <span id="year-span"></span> MLSOK, Inc. All Rights Reserved.
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple year auto-fill
+    document.getElementById("year-span").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
