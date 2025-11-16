@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4001 Creekwood | Edmond, OK</title>
-  <meta name="description" content="Learn more about 4001 Creekwood in Edmond, Oklahoma – a beautifully maintained one-owner home on 1.14 acres in Deer Creek Schools." />
+  <title>4001 Creekwood | Edmond, OK | Oklahoma Realty &amp; Auction</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="4001 Creekwood in Edmond, Oklahoma – 3 bed, 2 bath, 1,568 sq ft home on 1.14 wooded acres in Deer Creek Schools. Listed by Oklahoma Realty &amp; Auction.">
   <style>
     :root {
-      --primary: #005ea8;
-      --primary-light: #e6f1fa;
-      --accent: #c62828;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --bg: #f5f5f7;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
+      --ora-blue: #238ACB;
+      --ora-black: #000000;
+      --ora-white: #ffffff;
+      --bg: #f5f7fb;
+      --border: #e0e4ee;
+      --text-main: #222222;
+      --text-muted: #667085;
+      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
       --radius-lg: 18px;
-      --shadow-soft: 0 15px 30px rgba(15, 23, 42, 0.08);
+      --radius-xl: 24px;
     }
 
     * {
@@ -26,10 +26,10 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
+      font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e6f3fc 0, #f8fafc 40%, #edf2ff 100%);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
     a {
@@ -37,791 +37,160 @@
       text-decoration: none;
     }
 
-    .page-wrapper {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      background: radial-gradient(circle at top left, #e0efff, #f5f5f7);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
+    .page {
       max-width: 1120px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 0.5rem;
+      margin: 32px auto 64px;
+      padding: 0 16px;
+    }
+
+    /* Top bar / brand */
+
+    .top-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      font-size: 0.9rem;
+      margin-bottom: 24px;
+      gap: 16px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
+      gap: 12px;
     }
 
-    .brand-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 2px solid var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: #fff;
+    .brand-logo {
+      height: 48px;
+      width: auto;
+      border-radius: 10px;
+      object-fit: contain;
+      background: var(--ora-white);
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.12);
+      padding: 4px 8px;
+    }
+
+    .brand-text-main {
+      font-family: "Garamond", "Times New Roman", serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-size: 0.8rem;
+      color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
-      color: var(--muted);
+      gap: 16px;
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
-      position: relative;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.35rem;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.2s ease;
+    .nav-links a:hover {
+      border-color: rgba(35,138,203,0.25);
+      background: rgba(35,138,203,0.06);
+      color: var(--ora-blue);
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
+    /* Shell card */
+
+    .shell {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.2);
     }
 
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .nav-cta strong {
-      color: var(--primary);
-      font-size: 0.95rem;
-    }
+    /* Hero */
 
     .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 2.5rem;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 2.25rem;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 0;
     }
 
-    .hero-copy h1 {
-      font-size: clamp(2rem, 3vw, 2.6rem);
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.03em;
+    .hero-text {
+      padding: 28px 28px 24px 28px;
+      border-right: 1px solid var(--border);
     }
 
-    .address-line {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .tagline {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      max-width: 36rem;
-    }
-
-    .price-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .price {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .meta-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    .pill {
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--primary);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .btn {
-      padding: 0.75rem 1.4rem;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.96rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
-      background: #00457b;
-    }
-
-    .btn-outline {
-      background: #fff;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn-outline:hover {
-      background: var(--primary-light);
-      border-color: var(--primary);
-    }
-
-    .hero-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .hero-media {
-      position: relative;
-    }
-
-    .hero-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 0.9rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(15, 23, 42, 0.04);
-    }
-
-    .hero-image {
-      background-image: url("https://via.placeholder.com/900x600?text=4001+Creekwood");
-      background-size: cover;
-      background-position: center;
-      border-radius: 14px;
-      padding-top: 66%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-image-tag {
-      position: absolute;
-      top: 0.75rem;
-      left: 0.75rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-
-    .hero-image-tag span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #16a34a;
-    }
-
-    .hero-mini-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-      font-size: 0.75rem;
-    }
-
-    .mini-item {
-      background: #f9fafb;
-      border-radius: 10px;
-      padding: 0.5rem 0.6rem;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-
-    .mini-label {
-      color: var(--muted);
-    }
-
-    .mini-value {
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .content-shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 1.5rem 3rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem 1.4rem;
-      margin-top: 1.5rem;
-      border: 1px solid rgba(15, 23, 42, 0.04);
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
-    }
-
-    .card h2 {
-      font-size: 1.15rem;
-      margin-bottom: 0.8rem;
-    }
-
-    .card-subtitle {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.8rem;
-    }
-
-    .details-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem 1rem;
-      font-size: 0.9rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .detail-label {
-      color: var(--muted);
+    .eyebrow {
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.1rem;
+      letter-spacing: 0.15em;
+      color: var(--ora-blue);
+      font-weight: 600;
+      margin-bottom: 6px;
     }
 
-    .detail-value {
-      font-weight: 500;
+    .hero-title {
+      font-family: "Garamond", "Times New Roman", serif;
+      font-size: 2rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
+    .hero-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
-    .feature-list {
-      list-style: none;
-      margin-top: 0.9rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.6rem 1rem;
-      font-size: 0.9rem;
+    .hero-price {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ora-blue);
+      margin-bottom: 8px;
     }
 
-    .feature-list li {
+    .hero-meta {
+      font-size: 0.92rem;
+      color: var(--text-main);
       display: flex;
-      gap: 0.4rem;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-bottom: 16px;
     }
 
-    .feature-bullet {
-      margin-top: 0.35rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--primary);
-      flex-shrink: 0;
-    }
-
-    .gallery {
-      margin-top: 1.1rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.6rem;
-      font-size: 0.8rem;
-    }
-
-    .gallery-item {
-      background: #f9fafb;
-      border-radius: 12px;
-      padding: 0.6rem;
-      border: 1px dashed var(--border);
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-      justify-content: space-between;
-      min-height: 96px;
-    }
-
-    .gallery-tag {
+    .hero-chip {
       display: inline-flex;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border);
-      font-size: 0.7rem;
-      align-self: flex-start;
-      color: var(--muted);
-    }
-
-    .gallery-label {
-      font-weight: 500;
-      font-size: 0.85rem;
-    }
-
-    .map-shell {
-      margin-top: 1.25rem;
-    }
-
-    .map-frame {
-      border-radius: 14px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: #e5e7eb;
-    }
-
-    .map-placeholder {
-      padding: 2.5rem 1.5rem;
-      font-size: 0.9rem;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .map-placeholder strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .sidebar-header {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-card {
-      margin-top: 1.5rem;
-    }
-
-    .agent-row {
-      display: flex;
       align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .agent-avatar {
-      width: 44px;
-      height: 44px;
+      gap: 6px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--primary), #38bdf8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .agent-meta {
-      font-size: 0.85rem;
-    }
-
-    .agent-meta strong {
-      display: block;
-      font-size: 0.95rem;
-    }
-
-    .agent-meta span {
-      color: var(--muted);
-    }
-
-    .agent-meta .brokerage {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .contact-lines {
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .contact-lines a {
-      text-decoration: underline;
-      text-underline-offset: 0.15rem;
-      text-decoration-thickness: 1px;
-    }
-
-    .neighborhood-card {
-      margin-top: 1.25rem;
-      font-size: 0.9rem;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin: 0.6rem 0 0.3rem;
+      background: rgba(35,138,203,0.06);
+      color: #0f172a;
       font-size: 0.8rem;
     }
 
-    .pill-soft {
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border: 1px solid rgba(0, 94, 168, 0.15);
+    .hero-chip span {
+      font-size: 0.85rem;
     }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.25rem 1.5rem 1.75rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: #ffffff;
-      margin-top: 1.5rem;
+    .hero-bullets {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
     }
 
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
+    .hero-bullets li {
+      margin-left: 18px;
+    }
+
+    .hero-cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .footer-brand strong {
-      color: var(--text);
-    }
-
-    .footer-tagline {
-      color: var(--muted);
-    }
-
-    .footer-note {
-      font-size: 0.75rem;
-      max-width: 340px;
-      text-align: right;
-    }
-
-    @media (max-width: 900px) {
-      .hero,
-      .content-shell {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero {
-        padding-top: 1.25rem;
-      }
-
-      .hero-media {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero-actions {
-        width: 100%;
-      }
-
-      .btn {
-        flex: 1 1 auto;
-        justify-content: center;
-      }
-
-      .details-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .gallery {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-note {
-        text-align: left;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page-wrapper">
-    <header id="top">
-      <nav class="nav">
-        <div class="brand">
-          <div class="brand-badge">OK</div>
-          <div>
-            <div>Oklahoma Realty &amp; Auction</div>
-            <div style="font-size: 0.75rem; color: var(--muted);">Trusted Support Through Every Season of Life</div>
-          </div>
-        </div>
-        <div class="nav-links">
-          <a href="#details">Details</a>
-          <a href="#photos">Photos</a>
-          <a href="#map">Map</a>
-          <a href="#contact">Tour Request</a>
-        </div>
-        <div class="nav-cta">
-          <span>Schedule a showing:</span>
-          <strong>(405) 000-0000</strong>
-        </div>
-      </nav>
-
-      <section class="hero">
-        <div class="hero-copy">
-          <h1>4001 Creekwood</h1>
-          <div class="address-line">Edmond, Oklahoma • Deer Creek Schools</div>
-          <p class="tagline">
-            Beautifully maintained, one-owner home on <strong>1.14 acres</strong> surrounded by mature trees, wildlife, and a peaceful setting just minutes from town.
-          </p>
-          <div class="price-row">
-            <div class="price">$275,000</div>
-            <div class="meta-pills">
-              <div class="pill"><span class="pill-dot"></span> 3 Beds</div>
-              <div class="pill"><span class="pill-dot"></span> 2 Baths</div>
-              <div class="pill"><span class="pill-dot"></span> 1,568 Sq Ft</div>
-              <div class="pill"><span class="pill-dot"></span> 1.14 Acres</div>
-            </div>
-          </div>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Request a Private Tour</a>
-            <a href="#photos" class="btn btn-outline">View Property Highlights</a>
-          </div>
-          <p class="hero-note">
-            Have a home to sell first? I can help you coordinate both sides of the move for a smooth transition.
-          </p>
-        </div>
-
-        <div class="hero-media">
-          <div class="hero-card">
-            <div class="hero-image">
-              <div class="hero-image-tag"><span></span> For Sale</div>
-            </div>
-            <div class="hero-mini-grid">
-              <div class="mini-item">
-                <div class="mini-label">Lot Size</div>
-                <div class="mini-value">1.14 Acres</div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-label">School District</div>
-                <div class="mini-value">Deer Creek</div>
-              </div>
-              <div class="mini-item">
-                <div class="mini-label">County</div>
-                <div class="mini-value">Oklahoma County</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </header>
-
-    <main>
-      <div class="content-shell">
-        <section>
-          <article id="details" class="card">
-            <h2>Property Details</h2>
-            <p class="card-subtitle">
-              Scroll through the highlights, then reach out to schedule a private showing.
-            </p>
-
-            <div class="details-grid">
-              <div>
-                <div class="detail-label">Address</div>
-                <div class="detail-value">4001 Creekwood, Edmond, OK</div>
-              </div>
-              <div>
-                <div class="detail-label">Bedrooms</div>
-                <div class="detail-value">3</div>
-              </div>
-              <div>
-                <div class="detail-label">Bathrooms</div>
-                <div class="detail-value">2</div>
-              </div>
-              <div>
-                <div class="detail-label">Square Feet</div>
-                <div class="detail-value">1,568</div>
-              </div>
-              <div>
-                <div class="detail-label">Price</div>
-                <div class="detail-value">$275,000</div>
-              </div>
-              <div>
-                <div class="detail-label">Lot Size</div>
-                <div class="detail-value">1.14 Acres</div>
-              </div>
-            </div>
-
-            <p>
-              This one-owner home sits on a gorgeous 1.14-acre wooded lot with frequent deer sightings, mature trees, and a quiet country feel, while still being close to everything in Edmond.
-            </p>
-            <p>
-              Inside, you’ll find a warm and inviting layout with comfortable living spaces, plenty of natural light, and room to relax or entertain.
-            </p>
-
-            <ul class="feature-list">
-              <li><span class="feature-bullet"></span> 1,568 sq ft of well-designed living space</li>
-              <li><span class="feature-bullet"></span> 3 bedrooms and 2 full bathrooms</li>
-              <li><span class="feature-bullet"></span> Rain Bird sprinkler system to help maintain the yard</li>
-              <li><span class="feature-bullet"></span> Home security system for added peace of mind</li>
-              <li><span class="feature-bullet"></span> Located in highly desired Deer Creek Schools</li>
-              <li><span class="feature-bullet"></span> One-owner home that has been very well maintained</li>
-            </ul>
-
-            <div id="photos" class="gallery">
-              <div class="gallery-item">
-                <div class="gallery-tag">Add Photo</div>
-                <div class="gallery-label">Living Room</div>
-                <div>Upload a wide-angle shot of the main living area here.</div>
-              </div>
-              <div class="gallery-item">
-                <div class="gallery-tag">Add Photo</div>
-                <div class="gallery-label">Kitchen</div>
-                <div>Feature the kitchen layout and storage.</div>
-              </div>
-              <div class="gallery-item">
-                <div class="gallery-tag">Add Photo</div>
-                <div class="gallery-label">Backyard &amp; Acreage</div>
-                <div>Show off the trees, wildlife, and outdoor space.</div>
-              </div>
-            </div>
-
-            <div id="map" class="map-shell">
-              <h2>Location</h2>
-              <p class="card-subtitle">
-                Quiet and peaceful, yet just a short drive to schools, shopping, dining, and major roads.
-              </p>
-              <div class="map-frame">
-                <div class="map-placeholder">
-                  <strong>Interactive Map Coming Soon</strong>
-                  Add a Google Maps embed here so buyers can explore driving routes and nearby spots.
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <aside>
-          <section id="contact" class="card contact-card">
-            <h2 class="sidebar-header">Request More Information</h2>
-            <div class="agent-row">
-              <div class="agent-avatar">AR</div>
-              <div class="agent-meta">
-                <strong>Your Name, REALTOR&reg;</strong>
-                <span class="brokerage">Oklahoma Realty &amp; Auction</span>
-                <span>Edmond • Yukon • OKC Metro</span>
-              </div>
-            </div>
-
-            <div class="contact-lines">
-              Call/text: <a href="tel:14050000000">(405) 000-0000</a><br />
-              Email: <a href="mailto:you@example.com">you@example.com</a>
-            </div>
-          </section>
-
-          <section class="card neighborhood-card">
-            <h2 class="sidebar-header">Neighborhood Snapshot</h2>
-            <p>
-              4001 Creekwood gives you room to breathe on over an acre, with the convenience of Edmond and Deer Creek Schools nearby.
-            </p>
-            <div class="pill-row">
-              <span class="pill-soft">Deer Creek Schools</span>
-              <span class="pill-soft">Mature Trees &amp; Wildlife</span>
-              <span class="pill-soft">Quiet, Established Area</span>
-            </div>
-            <p>
-              Imagine your morning coffee on the back porch while you watch deer wander through the trees, then being minutes away from shopping, dining, and everyday essentials.
-            </p>
-          </section>
-        </aside>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <strong>Oklahoma Realty &amp; Auction</strong>
-          <span class="footer-tagline">Trusted Support Through Every Season of Life.</span>
-        </div>
-        <div class="footer-note">
-          Information deemed reliable but not guaranteed. Buyer to verify all information including schools, square footage, and lot size.
-        </div>
-      </div>
-    </footer>
-  </div>
-</body>
-</html>
+      gap: 10px;
+      align-i
